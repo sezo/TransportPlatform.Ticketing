@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TransportPlatform.Ticketing.Application.Queries;
@@ -10,7 +11,8 @@ namespace TransportPlatform.Ticketing.Api.Controllers;
 /// via an HTTP client or read-model projection. For MVP demo it lives here.
 /// </summary>
 [ApiController]
-[Route("api/routes")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/routes")]
 [AllowAnonymous]
 public class RoutesController(
     GetAvailableRoutesHandler getRoutesHandler,

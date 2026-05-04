@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,8 @@ public record CancelTicketRequest(string Reason);
 // ── Controller ────────────────────────────────────────────────────────────────
 
 [ApiController]
-[Route("api/tickets")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/tickets")]
 [Authorize(Policy = "permission:ticket:write")]
 public class TicketsController(
     ReserveTicketHandler reserveHandler,
