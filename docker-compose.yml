@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: src/TransportPlatform.Ticketing.Api/Dockerfile
+      extra_hosts:
+        - "host.docker.internal:host-gateway"
     ports:
       - "5001:5001"
     environment:
@@ -22,6 +24,8 @@ services:
     build:
       context: .
       dockerfile: src/TransportPlatform.Ticketing.Api/Dockerfile
+      extra_hosts:
+        - "host.docker.internal:host-gateway"
     ports:
       - "5002:5001"
     environment:
