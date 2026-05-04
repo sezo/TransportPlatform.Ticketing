@@ -15,7 +15,7 @@
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.15" />
-    <PackageReference Include="TransportPlatform.Infrastructure.Common" Version="1.0.1" />
+    <PackageReference Include="TransportPlatform.Infrastructure.Common" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>

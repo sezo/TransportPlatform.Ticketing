@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.15" />
-    <PackageReference Include="TransportPlatform.Contracts" Version="1.1.0" />
+    <PackageReference Include="TransportPlatform.Contracts" Version="1.3.0" />
   </ItemGroup>
 
   <ItemGroup>

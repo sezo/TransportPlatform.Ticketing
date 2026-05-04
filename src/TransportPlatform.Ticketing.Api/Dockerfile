@@ -11,6 +11,7 @@ COPY ["src/TransportPlatform.Ticketing.Infrastructure/TransportPlatform.Ticketin
 COPY ["src/Ticketing.Application/Ticketing.Application.csproj",                                "src/Ticketing.Application/"]
 COPY ["src/Ticketing.Domain/Ticketing.Domain.csproj",                                          "src/Ticketing.Domain/"]
 COPY ["NuGet.config", "."]
+RUN sed -i 's/localhost:5555/host.docker.internal:5555/g' NuGet.config
 
 RUN dotnet restore "src/TransportPlatform.Ticketing.Api/TransportPlatform.Ticketing.Api.csproj"
 
