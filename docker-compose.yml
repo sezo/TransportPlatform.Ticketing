@@ -1,0 +1,39 @@
+name: transport_ticketing
+
+services:
+
+  ticketing-svc-1:
+    build:
+      context: .
+      dockerfile: src/TransportPlatform.Ticketing.Api/Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5001
+      - ConnectionStrings__TicketingDb=Host=postgres-tickets;Port=5432;Database=tickets;Username=transport;Password=transport
+      - Keycloak__Authority=http://keycloak:8080/realms/transport
+      - Keycloak__Audience=transport-ticketing
+      - Observability__OtlpEndpoint=http://otel-collector:4317
+    networks:
+      - transport-net
+
+  ticketing-svc-2:
+    build:
+      context: .
+      dockerfile: src/TransportPlatform.Ticketing.Api/Dockerfile
+    ports:
+      - "5002:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5001
+      - ConnectionStrings__TicketingDb=Host=postgres-tickets;Port=5432;Database=tickets;Username=transport;Password=transport
+      - Keycloak__Authority=http://keycloak:8080/realms/transport
+      - Keycloak__Audience=transport-ticketing
+      - Observability__OtlpEndpoint=http://otel-collector:4317
+    networks:
+      - transport-net
+
+networks:
+  transport-net:
+    external: true
