@@ -11,7 +11,7 @@ namespace TransportPlatform.Ticketing.Api.Controllers;
 /// </summary>
 [ApiController]
 [Route("api/routes")]
-[Authorize(Policy = "permission:ticket:write")]
+[AllowAnonymous]
 public class RoutesController(
     GetAvailableRoutesHandler getRoutesHandler,
     GetRouteByIdHandler getRouteByIdHandler) : ControllerBase
