@@ -22,6 +22,7 @@ _ReSharper*/
 *.nuget.props
 *.nuget.targets
 nuget.config
+!NuGet.config
 
 # ── Secrets — never commit ───────────────────────────────────────────────────────
 appsettings.Development.json
